@@ -1,0 +1,30 @@
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-4.5.1
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: redis
+  name: redis
+spec:
+  containers:
+  - args:
+    - redis-server
+    image: docker.io/library/redis:latest
+    name: redis-redis
+    ports:
+    - containerPort: 6379
+      hostPort: 6379
+    - containerPort: 12000
+      hostPort: 12000
+    volumeMounts:
+    - mountPath: /data
+      name: fd2784313efcb93add91a8c8a261984a20d4faa10e956454e959667f7e0e5c1d-pvc
+  restartPolicy: Always
+  volumes:
+  - name: fd2784313efcb93add91a8c8a261984a20d4faa10e956454e959667f7e0e5c1d-pvc
+    persistentVolumeClaim:
+      claimName: fd2784313efcb93add91a8c8a261984a20d4faa10e956454e959667f7e0e5c1d
+
