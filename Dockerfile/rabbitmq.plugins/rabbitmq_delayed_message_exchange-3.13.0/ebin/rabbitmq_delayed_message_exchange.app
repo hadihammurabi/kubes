@@ -1,0 +1,12 @@
+{application,rabbitmq_delayed_message_exchange,
+             [{registered,[rabbitmq_delayed_message_exchange_sup]},
+              {env,[]},
+              {description,"RabbitMQ Delayed Message Exchange"},
+              {vsn,"3.13.0"},
+              {modules,[rabbit_delayed_message,rabbit_delayed_message_app,
+                        rabbit_delayed_message_sup,
+                        rabbit_delayed_message_utils,
+                        rabbit_exchange_type_delayed_message]},
+              {applications,[kernel,stdlib,rabbit,rabbit_common]},
+              {optional_applications,[]},
+              {mod,{rabbit_delayed_message_app,[]}}]}.
