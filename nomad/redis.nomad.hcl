@@ -5,7 +5,7 @@ job "redis" {
 
     network {
       port "redis" {
-        to = 6379
+        static = 6379
       }
     }
 
@@ -26,11 +26,6 @@ job "redis" {
       resources {
         cpu    = 500
         memory = 256
-      }
-
-      service {
-        name = "redis"
-        port = "redis"
       }
 
     }
