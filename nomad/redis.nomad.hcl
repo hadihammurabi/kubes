@@ -28,6 +28,11 @@ job "redis" {
         memory = 256
       }
 
+      service {
+        name = "redis"
+        port = "redis"
+      }
+
     }
   }
 }
